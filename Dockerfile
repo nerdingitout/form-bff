@@ -1,23 +1,18 @@
-#Build node image from Node Docker Hub
-FROM node:alpine3.10
+FROM node:14
 
-#Make app directory in container
-RUN mkdir /app
+WORKDIR /usr/src/app
 
-#Identify working directory
-WORKDIR /app
+ENV NODE_ENV production
 
-#Copy package
-COPY package.json /app
+# Just copy the package.json...
+COPY package*.json ./
 
-#Install rpm packages from package.json
+# so we can cache this layer:
 RUN npm install
 
-#Copy over app to app folder
-COPY . /app 
+COPY . .
 
-#Expose server at port ( accessible outside of container)
-EXPOSE 8080 
+EXPOSE 8080
 
-#Start app 
-CMD ["node", "app.js"]
+# command to run on container start
+CMD [ "node", "./bin/www" ]
