@@ -1,4 +1,4 @@
-require('dotenv').config();
+//require('dotenv').config();
 
 const config = {
   db: { /* do not put password or any sensitive info here, done only for demo */
