@@ -13,7 +13,7 @@ async function insertBook() {
   let book_author='jnfkjdncksn book author';
 
   db.query(
-    `insert into books values(${book_id},${book_name},${book_author});`,
+    `insert into books values(${book_id},'${book_name}','${book_author}');`,
     (err, res) => {
       console.log(err, res);
     } 

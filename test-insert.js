@@ -13,8 +13,11 @@ const pool = new Pool({
         rejectUnauthorized: false
     }    
 });
+const book_id=3283294;
+const book_name='this is another book';
+const book_author='this is the book author';
 pool.query(
-  "INSERT INTO books VALUES(13213,'pls work', 'TT_TT')",
+  `insert into books values(${book_id},'${book_name}','${book_author}');`,
   (err, res) => {
     console.log(err, res);
     pool.end();
