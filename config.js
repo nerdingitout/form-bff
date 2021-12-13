@@ -1,4 +1,9 @@
 //require('dotenv').config();
+DB_HOST = os.environ.get('DB_HOST');
+DB_PORT = os.environ.get('DB_PORT');
+DB_USER = os.environ.get('DB_USER');
+DB_PASSWORD = os.environ.get('DB_PASSWORD');
+DB_NAME = os.environ.get('DB_NAME');
 
 const config = {
   db: { /* do not put password or any sensitive info here, done only for demo */
@@ -12,7 +17,7 @@ const config = {
         rejectUnauthorized: false
     }
   },
-  listPerPage: LIST_PER_PAGE || 10,
+  listPerPage: 10,
 };
 
 module.exports = config;
