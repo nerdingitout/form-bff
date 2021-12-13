@@ -12,7 +12,7 @@ const config = {
         rejectUnauthorized: false
     }
   },
-  listPerPage: process.env.LIST_PER_PAGE || 10,
+  listPerPage: 10,
 };
 
 module.exports = config;
