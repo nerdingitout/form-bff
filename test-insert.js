@@ -1,13 +1,13 @@
 const { Pool, Client } = require("pg");
-require('dotenv').config();
+//require('dotenv').config();
 
 const pool = new Pool({
 /* do not put password or any sensitive info here, done only for demo */
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    host: DB_HOST,
+    port: DB_PORT,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_NAME,
     ssl: {
         require: true,
         rejectUnauthorized: false
