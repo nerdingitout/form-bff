@@ -12,7 +12,7 @@ const config = {
         rejectUnauthorized: false
     }
   },
-  listPerPage: 10,
+  listPerPage: 1000,
 };
 
 module.exports = config;
