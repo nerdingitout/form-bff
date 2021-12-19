@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: form-bff
+  name: form-bff
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: form-bff
+  template:
+    metadata:
+      labels:
+        app: form-bff
+    spec:
+      containers:
+        - image: quay.io/repository/pizachu/form-bff:latest
+          imagePullPolicy: Always
+          name: form-bff
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: PORT
+              value: "8080"
