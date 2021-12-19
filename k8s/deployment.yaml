@@ -15,7 +15,7 @@ spec:
         app: form-bff
     spec:
       containers:
-        - image: quay.io/repository/pizachu/form-bff:latest
+        - image: quay.io/pizachu/form-bff:latest
           imagePullPolicy: Always
           name: form-bff
           ports:
